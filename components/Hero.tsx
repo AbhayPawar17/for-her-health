@@ -67,8 +67,8 @@ const Hero = () => {
           {/* LEFT COLUMN: Logos & Buttons ONLY */}
           <div className="flex flex-col items-start justify-center">
 
-            {/* 1. Main Logo Image */}
-            <div className="relative w-full max-w-[500px] h-auto mb-4">
+            {/* 1. Main Logo Image - Hidden on mobile, visible on desktop */}
+            <div className="relative w-full max-w-[500px] h-auto mb-4 hidden lg:block">
               <Image
                 src="https://forherhealthwomen.com/wp-content/uploads/2022/01/cropped-cropped-450logo.png"
                 alt="For Her Health Logo"
