@@ -34,7 +34,7 @@ const FlyoutNav = () => {
               alt="Logo"
               width={150}
               height={80}
-              className="h-12 w-auto object-contain"
+              className="h-20 w-auto object-contain"
             />
           </Link>
 
@@ -55,26 +55,41 @@ const FlyoutNav = () => {
           </div>
 
           {/* DESKTOP ACTION BUTTONS & LOCATION */}
-          <div className="hidden lg:flex items-center gap-6">
+<div className="hidden lg:flex items-center gap-8">
 
-            {/* Our Location */}
-            <div className="flex items-center gap-2">
-              <div className="p-2 bg-pink-50 rounded-full text-pink-500">
-                {/* Map Pin Icon */}
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4">
-                  <path fillRule="evenodd" d="M11.54 22.351l.07.04.028.016a.76.76 0 00.723 0l.028-.015.071-.041a16.975 16.975 0 001.144-.742 19.58 19.58 0 002.683-2.282c1.944-1.99 3.963-4.98 3.963-8.827a8.25 8.25 0 00-16.5 0c0 3.846 2.02 6.837 3.963 8.827a19.58 19.58 0 002.682 2.282 16.975 16.975 0 001.145.742zM12 13.5a3 3 0 100-6 3 3 0 000 6z" clipRule="evenodd" />
-                </svg>
-              </div>
-              <div className="flex flex-col">
-                <span className="text-[10px] font-bold uppercase tracking-wider text-neutral-400 leading-tight">Our Location</span>
-                <span className="text-sm font-bold text-neutral-600 leading-tight">South Barrington</span>
-              </div>
-            </div>
+  {/* Our Location */}
+  <div className="flex items-center gap-3">
+    <div className="p-3 bg-pink-50 rounded-full text-pink-500">
+      {/* Map Pin Icon */}
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+        fill="currentColor"
+        className="w-5 h-5"
+      >
+        <path
+          fillRule="evenodd"
+          d="M11.54 22.351l.07.04.028.016a.76.76 0 00.723 0l.028-.015.071-.041a16.975 16.975 0 001.144-.742 19.58 19.58 0 002.683-2.282c1.944-1.99 3.963-4.98 3.963-8.827a8.25 8.25 0 00-16.5 0c0 3.846 2.02 6.837 3.963 8.827a19.58 19.58 0 002.682 2.282 16.975 16.975 0 001.145.742zM12 13.5a3 3 0 100-6 3 3 0 000 6z"
+          clipRule="evenodd"
+        />
+      </svg>
+    </div>
 
-            <button className="px-4 py-2 rounded-md text-sm font-medium bg-pink-500 hover:bg-pink-600 text-white transition-colors shadow-md shadow-pink-300">
-              Call Now
-            </button>
-          </div>
+    <div className="flex flex-col">
+      <span className="text-[11px] font-bold uppercase tracking-wider text-neutral-400 leading-tight">
+        Our Location
+      </span>
+      <span className="text-base font-bold text-neutral-600 leading-tight">
+        South Barrington
+      </span>
+    </div>
+  </div>
+
+  <button className="px-5 py-2.5 rounded-md text-base font-semibold bg-pink-500 hover:bg-pink-600 text-white transition-colors shadow-md shadow-pink-300">
+    Call Now
+  </button>
+</div>
+
 
           {/* MOBILE TOGGLE BUTTON */}
           <button
