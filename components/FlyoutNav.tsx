@@ -34,7 +34,7 @@ const FlyoutNav = () => {
               alt="Logo"
               width={150}
               height={80}
-              className="h-20 w-auto object-contain"
+              className="h-16 w-auto object-contain"
             />
           </Link>
 
@@ -59,7 +59,7 @@ const FlyoutNav = () => {
 
   {/* Our Location */}
   <div className="flex items-center gap-3">
-    <div className="p-3 bg-pink-50 rounded-full text-pink-500">
+    <div className="p-3 bg-white rounded-full text-pink-500">
       {/* Map Pin Icon */}
       <svg
         xmlns="http://www.w3.org/2000/svg"
