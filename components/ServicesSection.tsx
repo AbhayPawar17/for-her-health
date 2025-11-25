@@ -14,6 +14,7 @@ import {
   Scan,
   ArrowRight
 } from "lucide-react";
+import Image from "next/image";
 
 // Data extracted from the image
 const services = [
@@ -104,7 +105,7 @@ const ServicesSection = () => {
         
         {/* Header Section */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <h3 className="text-teal-600 font-semibold tracking-wide uppercase text-sm mb-2">
+          <h3 className="text-teal-600 font-semibold tracking-wide uppercase text-xl mb-2">
             Services We Provide
           </h3>
           <h2 className="text-3xl md:text-4xl font-bold text-slate-800 mb-6">
@@ -126,15 +127,15 @@ const ServicesSection = () => {
             >
               {/* --- Background Image Layer --- */}
               <div className="absolute inset-0 w-full h-full z-0">
-                <img 
+                <Image 
                    src={service.image} 
                    alt={service.title}
-                   className="w-full h-full object-cover transition-all duration-700 ease-in-out blur-[0px] group-hover:blur-0 group-hover:scale-110"
+                   fill
+                   className="object-cover transition-all duration-700 ease-in-out blur-none md:blur-[2px] group-hover:blur-none"
+                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                 />
               </div>
 
-              {/* --- Full Overlay Layer (Made slightly more transparent now that text has its own box) --- */}
-<div className="absolute inset-0 bg-white/50 group-hover:opacity-0 transition-all duration-500 z-10"></div>
               {/* --- Content Layer --- */}
               <div className="relative z-20 flex flex-col items-center w-full">
                 {/* Icon Circle - sits above the text box */}
