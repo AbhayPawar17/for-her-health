@@ -11,9 +11,11 @@ import {
   ShieldCheck, 
   FileText, 
   HeartPulse,
-  Scan
+  Scan,
+  ArrowRight
 } from "lucide-react";
 
+// Data extracted from the image
 const services = [
   {
     title: "Obstetrics",
@@ -102,9 +104,9 @@ const ServicesSection = () => {
         
         {/* Header Section */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <h2 className="text-teal-600 font-semibold tracking-wide uppercase text-xl mb-2">
+          <h3 className="text-teal-600 font-semibold tracking-wide uppercase text-sm mb-2">
             Services We Provide
-          </h2>
+          </h3>
           <h2 className="text-3xl md:text-4xl font-bold text-slate-800 mb-6">
             Health Care Services
           </h2>
@@ -118,32 +120,42 @@ const ServicesSection = () => {
           {services.map((service, index) => (
             <div 
               key={index}
-    className={`group relative overflow-hidden bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all duration-500 border border-slate-100 min-h-[300px] flex flex-col items-center justify-center text-center p-8 ${
+              className={`group relative overflow-hidden bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all duration-500 border border-slate-100 min-h-[350px] flex flex-col items-center justify-center text-center p-4 ${
                 index === services.length - 1 ? "lg:col-start-2" : ""
-              }`}            >
+              }`}
+            >
               {/* --- Background Image Layer --- */}
               <div className="absolute inset-0 w-full h-full z-0">
                 <img 
                    src={service.image} 
                    alt={service.title}
-                   className="w-full h-full object-cover transition-all duration-700 ease-in-out blur-[1px] group-hover:blur-0 group-hover:scale-110"
+                   className="w-full h-full object-cover transition-all duration-700 ease-in-out blur-[0px] group-hover:blur-0 group-hover:scale-110"
                 />
               </div>
 
-              {/* --- Overlay Layer (To keep text readable) --- */}
-              <div className="absolute inset-0 bg-white/40 group-hover:bg-white/20 transition-all duration-500 z-10"></div>
-
+              {/* --- Full Overlay Layer (Made slightly more transparent now that text has its own box) --- */}
+<div className="absolute inset-0 bg-white/50 group-hover:opacity-0 transition-all duration-500 z-10"></div>
               {/* --- Content Layer --- */}
-              <div className="relative z-20 flex flex-col items-center">
-                <div className="mb-6 p-4 bg-white rounded-full shadow-sm inline-block transform group-hover:scale-110 transition-transform duration-300">
+              <div className="relative z-20 flex flex-col items-center w-full">
+                {/* Icon Circle - sits above the text box */}
+                <div className="mb-4 p-4 bg-white rounded-full shadow-md inline-block transform group-hover:scale-110 transition-transform duration-300 relative z-30">
                   {service.icon}
                 </div>
-                <h4 className="text-xl font-extrabold text-slate-900 mb-3">
-                  {service.title}
-                </h4>
-                <p className="text-slate-900 font-medium">
-                  {service.description}
-                </p>
+                
+                {/* --- NEW: White Background Box for Text --- */}
+                <div className="bg-white/95 rounded-xl p-2 shadow-sm mx-2 backdrop-blur-sm w-full max-w-[90%]">
+                    <h4 className="text-xl font-extrabold text-slate-900 mb-2">
+                    {service.title}
+                    </h4>
+                    <p className="text-slate-800 font-bold leading-tight">
+                    {service.description}
+                    </p>
+
+                </div>
+                    <button className="flex items-center mt-4 gap-2 bg-teal-600 hover:bg-teal-700 text-white text-sm font-semibold py-2 px-6 rounded-full transition-colors duration-300 shadow-md ">
+                      Book Now
+                      <ArrowRight className="w-4 h-4" />
+                    </button>
               </div>
             </div>
           ))}
