@@ -176,6 +176,10 @@ const FlyoutNav: React.FC = () => {
  * MOBILE MENU COMPONENT
  * -----------------------------------------------------------------------------------------------*/
 
+/* -------------------------------------------------------------------------------------------------
+ * MOBILE MENU COMPONENT
+ * -----------------------------------------------------------------------------------------------*/
+
 const MobileMenu: React.FC<MobileMenuProps> = ({ onClose }) => {
   return (
     <motion.div
@@ -183,44 +187,45 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ onClose }) => {
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: -20 }}
       transition={{ duration: 0.3 }}
-      // Adjusted top padding (pt-20) to fit smaller header
-      className="fixed inset-0 top-0 z-40 bg-white pt-20 px-6 pb-6 flex flex-col h-screen overflow-y-auto lg:hidden"
+      // FIX 1: Changed h-screen to h-[100dvh] to account for mobile URL bars
+      // FIX 2: Increased pb-6 to pb-24 to give extra room at the bottom
+      className="fixed inset-0 top-0 z-40 bg-white pt-24 px-6 pb-6 flex flex-col h-dvh overflow-y-auto lg:hidden"
     >
       {/* Mobile Links */}
-      <div className="flex flex-col space-y-6">
+      {/* Reduced space-y-6 to space-y-4 so it takes up less vertical height */}
+      <div className="flex flex-col space-y-4">
         <Link
           href="/our-care-services"
           onClick={onClose}
-          className="text-lg font-semibold text-neutral-600 border-b border-pink-50 pb-4"
+          className="text-lg font-semibold text-neutral-600 border-b border-pink-50 pb-3"
         >
           Our Care Services
         </Link>
         <Link
           href="/med-spa"
           onClick={onClose}
-          className="text-lg font-semibold text-neutral-600 border-b border-pink-50 pb-4"
+          className="text-lg font-semibold text-neutral-600 border-b border-pink-50 pb-3"
         >
           Med Spa
         </Link>
         <Link
           href="/about"
           onClick={onClose}
-          className="text-lg font-semibold text-neutral-600 border-b border-pink-50 pb-4"
+          className="text-lg font-semibold text-neutral-600 border-b border-pink-50 pb-3"
         >
           About
         </Link>
         <Link
           href="/contact"
           onClick={onClose}
-          className="text-lg font-semibold text-neutral-600 border-b border-pink-50 pb-4"
+          className="text-lg font-semibold text-neutral-600 border-b border-pink-50 pb-3"
         >
           Contact
         </Link>
       </div>
 
       {/* Mobile Footer Actions */}
-      <div className="mt-auto pt-8 border-t border-pink-100 flex flex-col gap-6">
-        {/* Location Info Mobile */}
+      <div className="mt-auto pt-6 border-t border-pink-100 flex flex-col gap-5">
         <div className="flex items-center gap-3">
           <div className="p-3 bg-pink-50 rounded-full text-pink-500">
             <svg
@@ -246,7 +251,10 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ onClose }) => {
           </div>
         </div>
 
-        <button className="w-full py-3 rounded-lg font-medium bg-pink-500 hover:bg-pink-600 text-white transition-colors shadow-lg shadow-pink-500/20">
+        <button 
+          onClick={onClose}
+          className="w-full py-3.5 rounded-lg font-bold bg-pink-500 hover:bg-pink-600 text-white transition-colors shadow-lg shadow-pink-500/20"
+        >
           Call Now
         </button>
       </div>
