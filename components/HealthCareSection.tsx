@@ -83,7 +83,7 @@ export default function HealthCareSection() {
             and help.
           </p>
 
-          <button className="group flex items-center gap-2 bg-slate-900 text-white px-8 py-3 rounded-full hover:bg-pink-600 transition-all duration-300 font-medium">
+          <button className="group flex items-center gap-2 bg-pink-600 text-white px-8 py-3 rounded-full transition-all duration-300 font-medium">
             Meet the Team
             <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
           </button>
@@ -94,7 +94,7 @@ export default function HealthCareSection() {
           
           {/* Left: Testimonial Block */}
           <div className="lg:col-span-5 bg-[#e4f2fd] rounded-3xl p-8 md:p-12 flex flex-col justify-center relative overflow-hidden">
-            <Quote className="absolute top-8 left-8 text-blue-200 w-24 h-24 -z-0 opacity-50" />
+            <Quote className="absolute top-8 left-8 text-blue-200 w-24 h-24 z-0 opacity-50" />
             
             <div className="relative z-10 space-y-6">
               <h3 className="text-sm font-bold tracking-wider text-blue-800 uppercase mb-4">
@@ -103,7 +103,7 @@ export default function HealthCareSection() {
               
               <div className="space-y-4">
                 <p className="text-2xl md:text-3xl font-serif text-slate-800 leading-normal">
-                  "{TESTIMONIALS[0].text}"
+                  &quot;{TESTIMONIALS[0].text}&quot;
                 </p>
                 <div className="pt-4 border-t border-blue-200">
                   <p className="font-bold text-slate-900">{TESTIMONIALS[0].author}</p>
@@ -135,12 +135,12 @@ export default function HealthCareSection() {
                  />
                  
                  {/* Dark Overlay Gradient */}
-                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+                 <div className="absolute inset-0 bg-linear-to-t from-black/80 via-black/20 to-transparent" />
 
                  {/* --- NEW: Slide Text Overlay --- */}
                  <div className="absolute bottom-16 left-8 right-20 z-20 max-w-lg">
                     <p className="text-white text-xl md:text-2xl font-serif leading-relaxed drop-shadow-md">
-                      "{slide.quote}"
+                      &quot;{slide.quote}&quot;
                     </p>
                     <p className="text-white/80 text-sm font-bold uppercase tracking-widest mt-3">
                       — {slide.author}
