@@ -1,4 +1,5 @@
 import FlyoutNav from "@/components/FlyoutNav"
+import Footer from "@/components/Footer"
 import HealthCareSection from "@/components/HealthCareSection"
 import HerHealthSection from "@/components/HerHealthSection"
 import Hero from "@/components/Hero"
@@ -14,6 +15,7 @@ const Home = () => {
       <ServicesSection/>
       <VideoSection />
       <HealthCareSection/>
+      <Footer/>
     </>
   )
 }
