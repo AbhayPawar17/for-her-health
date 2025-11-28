@@ -48,13 +48,13 @@ const InfoSection = () => {
               Birth Control <span className="text-teal-600">Methods</span>
             </h2>
             
-            <p className="text-lg text-slate-600 leading-relaxed">
+            <p className="text-xl text-slate-800 leading-relaxed">
               We provide comprehensive counseling and a partial list of options tailored to your lifestyle. Your health and comfort are our priority. Click below to explore your options or speak with a specialist.
             </p>
 
             <ul className="space-y-3 pt-2">
               {['Hormonal Options', 'Long-Acting Reversible Contraception', 'Barrier Methods'].map((item, index) => (
-                <li key={index} className="flex items-center gap-3 text-slate-700 font-medium">
+                <li key={index} className="flex items-center gap-3 text-xl text-slate-800 font-semibold">
                   <div className="w-2 h-2 rounded-full bg-teal-500" />
                   {item}
                 </li>

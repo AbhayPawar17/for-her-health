@@ -7,6 +7,8 @@ import InfoSection from "@/components/InfoSection"
 import ServicesSection from "@/components/ServicesSection"
 import VideoSection from "@/components/VideoSection"
 import ContactSection from "@/components/ContactSection"
+import Services from "@/components/Services"
+import AppointmentSection from "@/components/AppointmentSection"
 
 const Home = () => {
   return (
@@ -14,10 +16,12 @@ const Home = () => {
       <FlyoutNav />
       <Hero />
       <HerHealthSection />
+      <Services/>
       <ServicesSection/>
       <VideoSection />
       <HealthCareSection/>
       <InfoSection />
+      <AppointmentSection/>
       <ContactSection/>
       <Footer/>
     </>

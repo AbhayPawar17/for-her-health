@@ -1,7 +1,7 @@
 import React from 'react';
 import Image from "next/image";
 
-// 1. I changed 'icon' to 'iconSrc' (just the string URL) so we can style the image freely later.
+// Services Data
 const services = [
   {
     title: "Low and High Risk Pregnancy Care & Delivery",
@@ -45,8 +45,9 @@ export default function HerHealthSection() {
   return (
     <div className="flex flex-col lg:flex-row w-full min-h-screen bg-white font-sans">
 
-      {/* LEFT SIDE: Hero Image & Call to Action */}
-      <div className="relative w-full lg:w-2/5 h-96 lg:h-auto bg-gray-100 overflow-hidden">
+      {/* LEFT SIDE: Hero Image, Text & Call to Action */}
+      <div className="relative w-full lg:w-2/5 min-h-[600px] lg:h-auto bg-gray-100 overflow-hidden">
+        
         {/* Background Image */}
         <Image
           src="/herhealthsectionimage.png"
@@ -57,27 +58,40 @@ export default function HerHealthSection() {
         />
 
         {/* White Overlay Gradient */}
-        <div className="absolute inset-0 bg-gradient-to-r from-white/80 via-white/40 to-transparent lg:bg-gradient-to-t" />
+        {/* Adjusted gradient to ensure text readability */}
+        <div className="absolute inset-0 bg-gradient-to-r from-white/90 via-white/60 to-white/20 lg:bg-gradient-to-t" />
 
         {/* Content Overlay */}
-        <div className="absolute inset-0 flex flex-col justify-center p-12 z-10">
-          <div className="max-w-md text-right lg:text-left ml-auto lg:ml-0">
-            <h3 className="text-gray-500 text-lg uppercase tracking-widest mb-2">Welcome to us</h3>
-            <h1 className="text-4xl lg:text-5xl font-serif text-slate-800 mb-8 leading-tight">
+        <div className="absolute inset-0 flex flex-col justify-center p-8 lg:p-16 z-10">
+          <div className="max-w-xl text-right lg:text-left ml-auto lg:ml-0">
+            
+            <h3 className="text-gray-500 text-sm lg:text-base uppercase tracking-[0.2em] mb-3 font-semibold">
+              Welcome to us
+            </h3>
+            
+            <h1 className="text-4xl lg:text-5xl font-serif text-slate-800 mb-6 leading-tight">
               Welcome to <br />
               <span className="text-sky-600">For Her Health</span>
             </h1>
 
-            <button className="px-8 py-3 bg-sky-500 hover:bg-sky-600 text-white font-medium rounded-full shadow-lg transition-all transform hover:-translate-y-1">
-              Make an Appointment
+            <p className="text-slate-900 text-xl lg:text-xl leading-relaxed mb-8 font-light">
+              We provide complete women’s health services including pregnancy care and delivery 
+              for both low and high-risk cases, family planning options, pregnancy testing, 
+              preventive health checkups, gynecology consultations, and sexual health support — 
+              all delivered with compassion and confidentiality to ensure your overall well-being.
+            </p>
+
+            <button className="px-10 py-4 bg-sky-500 hover:bg-sky-600 text-white font-semibold rounded-full shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-1 text-lg">
+              Book Now
             </button>
+
           </div>
         </div>
       </div>
 
       {/* RIGHT SIDE: Services Grid */}
-      <div className="w-full lg:w-3/5 bg-[#EBF8FF] p-8 lg:p-20 flex items-center">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-12 w-full">
+      <div className="w-full lg:w-3/5 bg-[#EBF8FF] p-8 lg:p-20 flex items-center justify-center">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-12 w-full max-w-4xl">
 
           {services.map((service, index) => (
             <a 
@@ -95,20 +109,17 @@ export default function HerHealthSection() {
                   group-hover:scale-110 border-4 border-white ring-1 ring-gray-100
                 "
               >
-                {/* Using 'fill' makes the image take the parent's size.
-                   'object-cover' ensures it covers the whole circle without distortion.
-                */}
                 <Image
                   src={service.iconSrc}
                   alt={service.title}
                   fill
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                  className="object-cover p-1" // Optional: p-1 adds a tiny white border inside if you want separation
+                  className="object-cover p-1"
                 />
               </div>
 
               {/* Title */}
-              <h3 className="text-slate-800 font-serif text-lg leading-snug px-2 transition-colors duration-300 group-hover:text-pink-400">
+              <h3 className="text-slate-800 font-serif text-lg leading-snug px-2 transition-colors duration-300 group-hover:text-pink-500">
                 {service.title}
               </h3>
             </a>

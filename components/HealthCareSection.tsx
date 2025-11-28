@@ -77,7 +77,7 @@ export default function HealthCareSection() {
             <span className="text-pink-600 italic">Not Just Patients</span>
           </h2>
 
-          <p className="text-lg text-slate-600 leading-relaxed max-w-2xl">
+          <p className="text-xl text-slate-800 leading-relaxed max-w-2xl">
             We offer confidential, non-judgmental sexual and reproductive health care 
             with people of any gender, age, and nationality. We are here to listen 
             and help.
