@@ -16,14 +16,14 @@ const Home = () => {
       <FlyoutNav />
       <Hero />
       <HerHealthSection />
-      <Services/>
-      <ServicesSection/>
       <VideoSection />
-      <HealthCareSection/>
+      <Services />
+      <ServicesSection />
+      <HealthCareSection />
       <InfoSection />
-      <AppointmentSection/>
-      <ContactSection/>
-      <Footer/>
+      <AppointmentSection />
+      <ContactSection />
+      <Footer />
     </>
   )
 }
